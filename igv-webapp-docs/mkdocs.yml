@@ -1,0 +1,40 @@
+site_name: 'IGV-Web App'
+
+repo_url: https://github.com/igvteam/igv-webapp-docs-website
+
+theme: 
+  name: 'windmill'
+  custom_dir: custom
+  static_templates: [404.html]
+  search_index_only: true
+  include_search_page: true
+
+nav:
+
+- About IGV: index.md
+
+- User Guide: UserGuide.md   
+
+- What's New: WhatsNew.md
+
+- File Formats: FileFormats.md  
+      
+- Tutorial Videos: TutorialVideos.md
+      
+- Hosting Your Own IGV-Web: Hosting.md  
+
+- Getting Help: GettingHelp.md
+
+markdown_extensions:
+  - toc:
+      permalink: '#'
+      permalink_title: 'Direct link to this section'
+  - extra
+  - sane_lists
+  - wikilinks
+  - admonition
+
+extra:
+  history_buttons: false
+  article_nav_top: false
+  article_nav_bottom: false
