@@ -13,11 +13,13 @@ nav:
 
 - About IGV: index.md
 
-- User Guide: UserGuide.md   
+- User Guide: UserGuide.md
 
-- What's New: WhatsNew.md
+- File Formats: FileFormats.md     
 
-- File Formats: FileFormats.md  
+- What's New: WhatsNew.md   
+
+- Example Sessions: ExampleSessions.md
       
 - Tutorial Videos: TutorialVideos.md
       

@@ -9,9 +9,11 @@ The page title should not go in the menu
 
 * Autoscale groups of quantitative data tracks together. [Details...](../UserGuide/#track-attributes-gear-menu)
 
-* Overlay two or more data quantitative tracks. [Details...](../UserGuide/#overlaying-tracks) 
+* Overlay two or more quantitative data tracks. [Details...](../UserGuide/#overlaying-tracks) 
 
 * Load and display sample attributes, and sort samples based on attribute values. [Details...](../UserGuide/#sample-attributes) 
+
+* Use an alignment track's gear menu to group the alignments by various attributes, for example, strand, pair orientation, tag, etc.
 
 * Display multiple information pop-ups with track data details. [Details...](../UserGuide/#displaying-track-data-details)
  
