@@ -15,6 +15,10 @@ The page title should not go in the menu
     
     * 	PabBio long read sequencing data and translocations found by the Sniffles method as described in the paper. [Open session in IGV-Web.](https://tinyurl.com/57bps2cb)
 
-
+5. XQTL tracks. [Open session in IGV-Web.](https://igv.org/app-test/?sessionURL=blob:tZVtT9swEMe_SmXxYpNSJ04KbSpN08omNgkGo5v2gBBykmtikdghdhsK4rvv7FLoxoMYdH1xahL__z7_crm7JDNotFCSDElI2RYNiEd0odoxr.oSPvMKNBlOeKnBIw1MoAGZAhleEpGhpMijAQokLsOrj9OKy86rncPtIhr49tlrfJjOjUq4zL4d7lqFMbUe.r7IZ90cJNTcGGhkVzU51RHlFb9QkreapqrycYHCBJyVb31G6PMpA0XNuaH5BbrzUnD9UmsbTpwTNTyxOReNqsbiAv6yLvJMtbJUPKNaAZ2mOqWQTf1clRnIA26KhWEi8l.iXrhTZ0a1dUNr06qRMGuwDRNhlqkqjYfZbzJo0BXvMA9DaENkQ8.GTRu2bOjbMLAhtoEFLjoNcyLmVMzJmNMxJ2ROyZyUOW3otOFiP6f9YcNPcuWRUqVTvcgnDIdh5A3CgbcV9br4Nx7EXrTZx_wbJcjw6BjBNDw9xfVHl8TMa1tPGs6mrtw8ohZn68ZB0GdxHG72.r0gjtmVd7P6zJS4cKKaipuby.vKHHVSKMsOfPm6izenTfmv5WJAGx8t_RG1TifWiRo9WxShkBmcP6MIH3GlJhHoPBNaJKIUZv4dN1EtGfYC97tBwjxSgMgLPDMLgify2FNS4fcEnerlRJZeJ9V6mdzn.2Qq4YuoFGukUvwnKsUzqEQPUeFSKsONnQMrcBLIVpp7dNqrgHVq4Kd6XXDqAtuwzUFT3GzdiO64Pwiqi19RJnRd8vmeyuxxt_d3d98djD.8v20.vVt6fQfvmswhTLBTdXYwQb2KD8elTfoOq6d2.4zjMOIafJkmAjcZw9nt3HOU8P0sZ_OyG7gXzuzzifoTYtu21DpRWVZUioLmambHIPhvEWr1ZmODPAbhvkpZwXF89Rs-)
+ 
+    * To highlight eqtls and associated phenotypes try the following from *Search for...* in the "B cell eQTL" track menu
+        * rs5751764
+        * SMARCB1
 
 
