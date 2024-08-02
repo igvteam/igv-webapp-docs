@@ -40,22 +40,21 @@ IGV requires a reference genome. It serves as the "coordinate system" for displa
 
 The available predefined genomes are listed in the `Genome` dropdown menu. If you select any of these genomes, a corresponding gene annotation track will also be loaded.
 
-!!! tip " "
-    The menu includes the complete list of available predefined genomes. In order to more easily find the genomes you use most often, the most recently-used ones (up to 5) are displayed above the predefined genomes list (only if third party cookies are enabled in your web browser).
+The menu includes the complete list of available predefined genomes. In order to more easily find the genomes you use most often, the most recently-used ones (up to 5) are displayed above the predefined genomes list (only if third party cookies are enabled in your web browser).
 
-#### **Genome sequence file**
+#### **Genome files**
 
-If you have an indexed FASTA file of your reference genome sequence, you can load it using one of the options in the top part of the `Genome` menu: 
+If you have your reference genome in a GenBank (.gbk) file, FASTA file, or a [twoBit file](https://genome.ucsc.edu/FAQ/FAQformat.html#format7), you can load it using one of the options in the top part of the `Genome` menu: 
 
 * `Local File`
 * `Dropbox`
 * `Google Drive`
 * `URL`
 
-Selecting the `URL` option will present a dialog where you enter the full web link URL to the FASTA file and to the corresponding index file. For the other options, both the FASTA file and the index file must be selected from the file chooser that pops up.
+Unless your FASTA file is quite small, it is recommended that you also load a corresponding index file. Loading a large FASTA file without an index is likely to freeze the app. The FASTA and index files must be specified at the same time. When loading via the `URL` option the dialog has entry fields for the web link URL to the file and to the corresponding index file. For the other loading options, both the FASTA file and the index file must be selected from the file chooser that pops up.
 
 !!! note " "
-    A FASTA file only has the sequence data and IGV cannot display the cytoband ideogram in the chromosome ruler or automatically load a corresponding gene annotation track. You can load a gene annotation file directly via the `Tracks` menu.
+    The FASTA and twoBit files only contain the the genome sequence and a corresponding genome annotation track will not be automatically loaded. You can load a genonme annotation file directly via the `Tracks` menu.
 
 You will be prompted to sign into a Google account if you select the `Google Drive` option, and a [Dropbox](https://www.dropbox.com) account is needed for the `Dropbox` option. The `Google Drive` option will not be presented if cookies are disabled in the web browser.
 
@@ -97,8 +96,7 @@ To load track data from a file, use one of the options in the top part of the me
 
 Selecting the `URL` option will present a dialog where you enter the full web link URL to one data file and the corresponding index file, if there is one. For the other options, a file chooser pops up and you can select files for multiple tracks, along with the corresponding index files. 
 
-!!! note " "
-    For indexed files, e.g. BAM files, you must explicitly select the index file along with the data file. If you also use IGV-Desktop, you may be used to IGV automatically finding and loading the index file. This is not always possible from a web browser, so the behavior is different in IGV-Web.
+For indexed files, e.g. BAM files, you must explicitly select the index file along with the data file. If you also use IGV-Desktop, you may be used to IGV automatically finding and loading the index file. This is not always possible from a web browser, so the behavior is different in IGV-Web.
 
 You will be prompted to sign into a Google account if you select the `Google Drive` option, and a [Dropbox](https://www.dropbox.com) account is needed for the `Dropbox` option. The `Google Drive` option will not be presented if cookies are disabled in the web browser.
 
@@ -354,7 +352,7 @@ Regions of interest are visually indicated by a green bar below the ruler and a 
 
     * To provide a **label or description** for the region of interest, select `Set description...` from the menu and then enter the description.
     
-    * To **copy** the reference genome nucleotide sequence in that region to the system clipboard, select `Copy reference sequence` from the menu. This menu item will only appear if the region is 1 mb or less.
+    * To **copy** the reference genome nucleotide sequence in that region to the system clipboard, select `Copy reference sequence` from the menu. This menu item will only appear if the region is 1 Mb or less.
     
     * To **BLAT** the reference genome nucleotide sequence in that region, select `BLAT reference sequence` from the menu. This menu item will only appear if the region is 25 kb or less.
   
@@ -366,7 +364,7 @@ Regions of interest are visually indicated by a green bar below the ruler and a 
     
     * To disable the gray highlighting across all tracks, click on the `Hide all ROIs` button. To reenable the highlighting, click on the same button again. Note that the green bar below the ruler is always displayed.
     
-    * For regions of 1 mb or less, you can select its row in the table and click on the `Copy sequence` button to copy the nucleotide sequence in that region to the system clipboard.
+    * For regions of 1 Mb or less, you can select its row in the table and click on the `Copy sequence` button to copy the nucleotide sequence in that region to the system clipboard.
 
 
 ## Circular view

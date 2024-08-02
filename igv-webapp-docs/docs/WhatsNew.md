@@ -39,7 +39,7 @@ This is a major release with many new features, described below:
 
     * Overlay two or more quantitative data tracks. [Details...](../UserGuide/#overlaying-tracks) 
 
-    * When the view is zoomed out, each pixel on the screen may represent a genomic region that encompasses multiple numeric values in the data. A **windowing function** that specifies which of the multiple values to display can be selected in the gear menu of WIG, BigWig, and TDF tracks. Choose between `mean` (default), `min`, and `max`. 
+    * When the view is zoomed out, each pixel on the screen may represent a genomic region that encompasses multiple numeric values in the data. A **windowing function** that specifies which of the multiple values to display can be selected in the gear menu. Choose between `mean` (default), `min`, and `max`. 
 
 * **Genome annotations / feature tracks:**
 
@@ -49,13 +49,13 @@ This is a major release with many new features, described below:
  
 * **Reference genome and sequence**
 
-    * The compact [UCSC twoBit format](https://genome.ucsc.edu/FAQ/FAQformat.html#format7) is supported for the reference genome sequence. 
+    * The GenBank (.gbk) file format is supported for the reference genome (sequence and default annotations).
     
-    * Genomes can be loaded via URL directly from UCSC track hubs. 
+    * The compact [UCSC twoBit format](https://genome.ucsc.edu/FAQ/FAQformat.html#format7) is supported for the reference genome sequence.  
     
-    * The `Genome` menu includes an option to view a table of assemblies available at the UCSC GenArk site and select one to load into IGV. [Details...](../UserGuide/#ucsc-genark)
+    * The `Genome` menu includes an option to view a table of assemblies available at the UCSC GenArk site and select one to load into IGV. Other UCSC track hub genomes can be loaded via URL. [Details...](../UserGuide/#ucsc-genark)
 
-    * The most recently used reference genomes (up to 5 of them) are displayed above the list of the available predefined genomes in the `Genome` menu. This feature works if third party cookies are enabled in your web browser.
+    * The most recently used predefined genomes (up to 5 of them) are displayed above the full list of the available predefined genomes in the `Genome` menu. This feature works if third party cookies are enabled in your web browser.
 
     * Two new actions on regions of the reference sequence are available via `Regions of Interest`: (1) copy the sequence to the system clipboard; (2) BLAT the sequence. [Details...](../UserGuide/#regions-of-interest)
 
