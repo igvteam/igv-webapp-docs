@@ -3,6 +3,11 @@ The page title should not go in the menu
 -->
 <p class="page-title"> What's New </p>
 
+!!! Danger "Safari users:"
+    If you see a blank page when clicking on the *Details* links on this page, try scrolling slightly to make the content appear.
+
+<br>
+
 **August 2024. IGV-Web 2.0.0 based in igv.js 3.0.1**
 
 This is a major release with many new features, described below:
@@ -35,7 +40,7 @@ This is a major release with many new features, described below:
     
 * **Quantitative data tracks:**
 
-    * Autoscale groups of quantitative data tracks together. [Details...](../UserGuide//#setting-attributes-on-multiple-tracks)
+    * Autoscale groups of quantitative data tracks together. [Details...](../UserGuide/#setting-attributes-on-multiple-tracks)
 
     * Overlay two or more quantitative data tracks. [Details...](../UserGuide/#overlaying-tracks) 
 
