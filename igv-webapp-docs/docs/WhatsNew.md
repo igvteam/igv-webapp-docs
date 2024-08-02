@@ -35,7 +35,7 @@ This is a major release with many new features, described below:
     
 * **Quantitative data tracks:**
 
-    * Autoscale groups of quantitative data tracks together. [Details...](../UserGuide//#setting-attributes-on-multiple-tracks)
+    * Autoscale groups of quantitative data tracks together. [Details...](../UserGuide/#setting-attributes-on-multiple-tracks)
 
     * Overlay two or more quantitative data tracks. [Details...](../UserGuide/#overlaying-tracks) 
 
