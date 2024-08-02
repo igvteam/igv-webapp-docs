@@ -1,4 +1,4 @@
-# Documentation website: IGV desktop application
+# Documentation website: IGV-Web app
 
 This repo contains the source for the documentation for the IGV desktop application. The documentation is Markdown based and the website is generated using the [MkDocs](https://www.mkdocs.org/) static site generator. 
 
