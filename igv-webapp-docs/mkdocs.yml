@@ -1,6 +1,6 @@
 site_name: 'IGV-Web App'
 
-repo_url: https://github.com/igvteam/igv-webapp-docs-website
+repo_url: https://github.com/igvteam/igv-webapp-docs
 
 theme: 
   name: 'windmill'
