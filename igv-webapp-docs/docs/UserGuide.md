@@ -304,10 +304,11 @@ To restore a session from a URL, paste it into a browser address bar, or click o
 
 # Saving images
 
-Images can be saved of the whole  
+You can save an image of all the tracks as displayed in the IGV view or a single track. 
 
-* Click on `Save SVG` in the app menu bar to create an image that includes all the data tracks as currently displayed, as well as the ruler and cytoband ideogram. The image file will be saved in SVG format, a scalable vector format that is useful for creating figures for publication. 
-* You can save the image of an individual track via the track *popup menu*. Select SVG or PNG format. 
+* To save an image of **all the tracks** currently displayed, as well as the ruler and cytoband ideogram, click on the `Save Image` menu and select either `Save as PNG` or `Save as SVG`.
+
+* To save the image of an **individual track**, right-click on the track to bring up the *popup menu* and select either PNG or SVG format.
 
 Depending on your web browser settings, the image files will be saved to your default downloads folder or you will be prompted to specify a destination folder. 
 

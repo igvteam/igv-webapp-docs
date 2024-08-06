@@ -70,11 +70,17 @@ This is a major release with many new features, described below:
     
     * Display multiple information pop-ups with track data details. [Details...](../UserGuide/#displaying-track-data-details)
     
-    * New file format: *bedMethyl* (described on the [ENCODE site](https://www.encodeproject.org/data-standards/wgbs); scroll down the page to see the description).
+    * Support for *bedMethyl* files (format described on the [ENCODE site](https://www.encodeproject.org/data-standards/wgbs); scroll down the page to see the description).
+    
+    * New track type: *xQTL*. The [Example Sessions section](../ExampleSessions) has links a live IGV-Web app sessions that demonstrates xQTL tracks. 
+    
+    * Images can be saved in PNG format, as well as the SVG format that was already supported.
+    
+    * When the browser is too narrow to accommodate all the text buttons in the toolbar, they are replaced with smaller icon buttons. Hover over an icon to see the corresponding text. 
     
     * The `Help` menu *Documentation* item links to a new expanded documentation site at https://igv.org/doc/webapp. The menu also has a new item that directly links to a page on the documentation site with *Example Sessions*.
     
-    * When the browser is too narrow to accommodate all the text buttons in the toolbar, they are replaced with smaller icon buttons. Hover over an icon to see the corresponding text. 
+
     
 
    
