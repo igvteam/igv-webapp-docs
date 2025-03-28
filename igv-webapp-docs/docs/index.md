@@ -35,7 +35,6 @@ IGV is completely open for anyone to use under an [MIT open-source license](http
 
 The source code repositories for all forms of IGV are hosted on GitHub at [https://github.com/igvteam](https://github.com/igvteam). The IGV-Web app repository is hosted at [https://github.com/igvteam/igv-webapp](https://github.com/igvteam/igv-webapp)
 
-
 # Citing IGV
 
 To cite your use of IGV in your publication, please reference one or more of:

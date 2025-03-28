@@ -11,7 +11,7 @@ The page title should not go in the menu
 In a [web browser](#supported-browsers), navigate to <https://igv.org/app>.   
 
 !!! note " "
-    Make sure that popups are not disabled in your web browser as some features rely on them. For example, loading tracks and genomes from files in Google Drive may pop up a login window. Also note that some options may not be available if all cookies have been disabled in the web browser preferences. 
+    Make sure that popups are not disabled in your web browser as some features rely on them. For example, loading tracks and genomes from files in Google Cloud Storage may pop up a login window. Also note that some options may not be available if all cookies have been disabled in the web browser preferences. 
 
 ### 2. Load a reference genome
 IGV requires a reference genome. It serves as the "coordinate system" for displaying the tracks. When the IGV-Web page first loads, it will load a default reference genome. To load a different genome, you can either select one of IGV's predefined genomes or use one of the options to load a genome sequence file that you specify, as described in the section on [loading the reference genome](#loading-the-reference-genome) below.
@@ -48,15 +48,14 @@ If you have your reference genome in a GenBank (.gbk) file, FASTA file, or a [tw
 
 * `Local File`
 * `Dropbox`
-* `Google Drive`
 * `URL`
+
+You must have a [Dropbox](https://www.dropbox.com) account to use the `Dropbox` option.
 
 Unless your FASTA file is quite small, it is recommended that you also load a corresponding index file. Loading a large FASTA file without an index is likely to freeze the app. The FASTA and index files must be specified at the same time. When loading via the `URL` option the dialog has entry fields for the web link URL to the file and to the corresponding index file. For the other loading options, both the FASTA file and the index file must be selected from the file chooser that pops up.
 
 !!! note " "
     The FASTA and twoBit files only contain the the genome sequence and a corresponding genome annotation track will not be automatically loaded. You can load a genonme annotation file directly via the `Tracks` menu.
-
-You will be prompted to sign into a Google account if you select the `Google Drive` option, and a [Dropbox](https://www.dropbox.com) account is needed for the `Dropbox` option. The `Google Drive` option will not be presented if cookies are disabled in the web browser.
 
 !!! tip " "
     **Advanced:** Another option is to create and load a .json genome file, which can include references to a cytoband file and a default gene annotation track. See the [File Formats section](./FileFormats.md) for details on the IGV reference genome JSON format.
@@ -91,14 +90,11 @@ To load track data from a file, use one of the options in the top part of the me
 
 * `Local File`
 * `Dropbox`
-* `Google Drive`
 * `URL`
 
-Selecting the `URL` option will present a dialog where you enter the full web link URL to one data file and the corresponding index file, if there is one. For the other options, a file chooser pops up and you can select files for multiple tracks, along with the corresponding index files. 
+Selecting the `URL` option will present a dialog where you enter the full web link URL to one data file and the corresponding index file, if there is one. For the other options, a file chooser pops up and you can select files for multiple tracks, along with the corresponding index files.  You will need a [Dropbox](https://www.dropbox.com) account to use the `Dropbox` option. 
 
 For indexed files, e.g. BAM files, you must explicitly select the index file along with the data file. If you also use IGV-Desktop, you may be used to IGV automatically finding and loading the index file. This is not always possible from a web browser, so the behavior is different in IGV-Web.
-
-You will be prompted to sign into a Google account if you select the `Google Drive` option, and a [Dropbox](https://www.dropbox.com) account is needed for the `Dropbox` option. The `Google Drive` option will not be presented if cookies are disabled in the web browser.
 
 The [File Formats section](./FileFormats.md) has information about supported file types.
 
@@ -273,16 +269,15 @@ Be aware that the saved state of an IGV session includes pointers to the data fi
 ### Session files
 To **save** a file that contains the state of the current IGV session, click on the `Session` dropdown menu, select `Save`, and enter a filename into the dialog that pops up. The filename must have the .json suffix, or it will not be recognized as a session file when later loaded into IGV-Web. Depending on your web browser settings, the file will be saved to your default downloads folder or you will be prompted to specify a destination folder. 
 
-You can share your session with others, for example by emailing it to them, or copying the saved file to a shared file system, or uploading it to Dropbox, Google Drive, or a web server.
+You can share your session with others, for example by emailing it to them, or copying the saved file to a shared file system, or uploading it to Dropbox, or a web server.
 
 To **restore** a session from a saved file, click on the `Session` dropdown menu and select one of the options in the top part of the menu: 
 
 * `Local File`
 * `Dropbox`
-* `Google Drive`
 * `URL`
 
-Selecting the `URL` option will present a dialog to enter the full web link URL to the session file. For the other options, a file chooser pops up. If you select the `Google Drive` option, you will be prompted to sign into a Google account, and a [Dropbox](https://www.dropbox.com) account is needed for the `Dropbox` option. The `Google Drive` option will not be presented if cookies are disabled in the web browser.
+Selecting the `URL` option will present a dialog to enter the full web link URL to the session file. For the other options, a file chooser pops up. You must have a [Dropbox](https://www.dropbox.com) account to use the `Dropbox` option. 
 
 #### Session files from IGV-Desktop
 Session files that were saved in the Java desktop version of IGV can also be loaded into IGV-Web via the `Session` dropdown menu. However, IGV-Desktop supports more features and file types than the IGV-Web app, and so the session may not be completely restored. Also note that session files saved in IGV-Web currently cannot be loaded into IGV-Desktop.
@@ -297,7 +292,7 @@ To create a web link URL that will open the IGV-Web app with all the same data t
 
 * Use the `COPY` button to copy the URL to the clipboard and paste it wherever you want for safe keeping. 
 * Alternatively, the `Tweet` and `EMAIL` buttons provide shortcuts for sending the URL to others. 
-* The `EMBED` button generates an HTML code snippet that can be used to add the session to a web page. *Note: For the EMBED option, tracks loaded from Google Drive will only work if they are publicly available.*
+* The `EMBED` button generates an HTML code snippet that can be used to add the session to a web page. 
 * The `QR CODE` button generates a QR two-dimensional barcode for the URL.
 
 To restore a session from a URL, paste it into a browser address bar, or click on the URL in an email message, tweet, etc.
