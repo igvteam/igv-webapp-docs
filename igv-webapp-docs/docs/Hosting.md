@@ -74,32 +74,34 @@ Note this is an example only; it is an older version of the app that is that is 
 
 ## Configuration
 
-A number of IGV-Web app properties are customizable, and are configured through the global `igvwebConfig`, which is defined in the file `igvwebConfig.js`.
+A number of IGV-Web app properties are customizable and are configured through the global `igvwebConfig`, which is defined in the file `igvwebConfig.js`.
 
-* **Configuring the _Genome_ dropdown menu.** The property `genomes` defines a URL to a JSON file containing a list of genome configuration objects used to populate the menu. For a description of the genome configuration object, see the [igv.js documentation](https://igv.org/doc/igvjs/#Reference-Genome).  
+### Configurable properties
 
-* **Configuring the _Tracks_ dropdown menu to include pre-defined tracks.** The property `trackRegistryFile` defines a URL to a configuration file that contains a JSON object with genomeIDs as keys and an array of URLs to JSON files defining each menu item. Clicking on a menu item will open up a simple list of pre-defined tracks or an annotated table of pre-defined tracks.
+* **The entries included in the _Genome_ dropdown menu.** The property `genomes` defines a URL to a JSON file containing a list of genome configuration objects used to populate the menu. For a description of the genome configuration object, see the [igv.js documentation](https://igv.org/doc/igvjs/#Reference-Genome).  
+
+* **Pre-defined tracks in the _Tracks_ dropdown menu.** The **optional** property `trackRegistryFile`  defines a URL to a configuration file that contains a JSON object with genomeIDs as keys and an array of URLs to JSON files that define the pre-defined tracks to be included in the menu. Clicking on a menu item will open up a simple list of pre-defined tracks or an annotated table of pre-defined tracks.
 The default track registry file is ```resources/tracks/trackRegistry.json```.  Further details on configuring the tracks menu are available [below](#track-registry).
 
-* **Configuring the _Session_ dropdown menu to include pre-defined sessions.** The property `sessionRegistryFile` defines a URL to a configuration file that contains **a JSON object with URLs to JSON files defining each session to be included in the menu. Clicking on a menu item will open up a simple list of pre-defined tracks or an annotated table of pre-defined tracks.**
-The default session registry file is ```resources/sessions/sessionRegistry.json```.  Further details on configuring the sessions menu are available [below](#session-registry).
+* **Pre-defined sessions in the _Session_ dropdown menu .** The **optional** property `sessionRegistryFile` defines a URL to a configuration file that contains a JSON object with URLs to IGV sessions to be included in the menu. Clicking on a menu item will load the session into the IGV-Web app.
+Further details on configuring the sessions menu are available [below](#session-registry).
 
-* **Configuring properties of the IGV browser and default tracks** The `igvConfig` property is an igv.js configuration object.   See the [igv.js documentation](https://igv.org/doc/igvjs/#Browser-Creation/) for details.
+* **Properties of the IGV browser and default tracks** The `igvConfig` property is an igv.js configuration object.   See the [igv.js documentation](https://igv.org/doc/igvjs/#Browser-Creation/) for details.
 
-* **Enabling Dropbox access.** The property `dropboxAPIKey` (_optional_)  is a Dropbox "data-api-key" used to enable a Dropbox file picker in the Genome, Session, and 
+* **Dropbox access.** The **optional** property `dropboxAPIKey` is a Dropbox "data-api-key" used to enable a Dropbox file picker in the Genome, Session, and 
 Tracks menus.  See [https://www.dropbox.com/developers/apps/create](https://www.dropbox.com/developers/apps/create)
 for instructions on obtaining an API key.  Note this is not needed to load Dropbox files by URL, only for providing a 
 file picker.
 
-* **Enabling Google access.** The property `clientId` - (_optional_) is a Google clientId, used to enable OAuth for access to protected Google resources.  See [Google Support](https://developers.google.com/identity/sign-in/web/sign-in) for instructions on obtaining a clientId.  OAuth requests from igv.js will include the following scopes.
+* **Google access.** The **optional** property `clientId` - is a Google clientId used to enable OAuth for access to protected Google resources.  See [Google Support](https://developers.google.com/identity/sign-in/web/sign-in) for instructions on obtaining a clientId.  OAuth requests from igv.js will include the following scopes.
 
     * https://www.googleapis.com/auth/userinfo.profile - _always_
     * https://www.googleapis.com/auth/devstorage.read_only  - _if accessing protected Google Cloud Storage files_
     * https://www.googleapis.com/auth/drive.readonly - _if accessing files stored on Google Drive_
 
-	<br> If the provided clientID supports accessing files stored in Google Drive then you can also set the `googleDriveEnabled` property to `true`. This will add `Google Drive` options to all the file loading menus (`Genome`, `Tracks`, etc), allowing the user to launch a Google Drive picker to select the files to load. 
+	<br> If the provided `clientID` supports accessing files stored in Google Drive then you can also set the `googleDriveEnabled` property to `true`. This will add `Google Drive` options to all the file loading menus (`Genome`, `Tracks`, etc), allowing the user to launch a Google Drive picker to select the files to load. 
 
-* **Enabling shortening of shared URLs.** The property `urlShortener` (_optional_) is an object or function defining a URL shortener to shorten links created by the **Share** button.  The value of this property can be replaced with a function, taking a single argument (the long URL) and returning the shortened URL, or an Object. 
+* **Shortening of shared URLs.** The **optional** property `urlShortener` is an object or function defining a URL shortener to shorten links created by the **Share** button.  The value of this property can be replaced with a function, taking a single argument (the long URL) and returning the shortened URL, or an Object. 
 
 ### Where to find the configuration files
 
@@ -108,7 +110,7 @@ file picker.
 
 > NOTE: if you change the configuration files, you may need to clear the browser cache before seeing the effect.
 
-### Default configuration
+### Example configuration
 
 ```javascript
 var igvwebConfig = {
@@ -124,11 +126,14 @@ var igvwebConfig = {
     
     googleDriveEnabled: false,
 
-    // Provide a URL shortener function or object.   This is optional.  If not supplied
-    // sharable URLs will not be shortened.
-    urlShortener: {
-        provider: "tinyURL"
-    },
+    // Provide a URL shorterner function or object.   This is optional.  
+    // If not supplied sharable URLs will not be shortened.  
+    // If using tinyURL supply an api token.
+    // urlShortener: {
+    //     provider: "tinyURL",
+    //     api_token: "<your tinyurl token>"
+    // },
+    // urlShortener: function(longURL) {...   return shortendURL}
 
     igvConfig:
         {
@@ -153,7 +158,7 @@ var igvwebConfig = {
 }
 ```
 
-### Track Registry
+### Track registry
 
 The set of pre-defined tracks presented in the _Tracks_ menu is different depending on the currently selected reference genome. The items presented in the menu are defined in the file specified by the `trackRegistryFile` property in _igvwebConfig.js_ by associating lists of track configuration files with genome IDs. 
 
@@ -295,11 +300,11 @@ Mother,CEPH,gcs,alignment,gs://genomics-public-data/platinum-genomes/bam/NA12892
 ```
 
 
-### Session Registry
+### Session registry
 
-Prede presented in the _Session_ menu are defined in the file specified by the `sessionRegistryFile` property in _igvwebConfig.js_ by defining a list of pre-defined sessions the user can select to view. 
+Predefined sessions presented in the _Session_ menu are defined in the file specified by the `sessionRegistryFile` property in _igvwebConfig.js_. 
 
-The **example session registry file** below will add two pre-defined sessions to the _Session_ menu.  
+The **example session registry file** below will add two pre-defined sessions to the _Session_ menu. The two session files *gbm-copynumber.json* and *1kg-variants-session.json* are regular IGV-Web session files; they can be created by clicking on `Save` in the `Session` menu. 
 
 **Note:** make sure to include the comma after every item in the lists, except the last one.
 
@@ -320,6 +325,6 @@ The **example session registry file** below will add two pre-defined sessions to
 }
 ```
 
-### Data Servers
+## Data servers
 
 IGV-Web uses igv.js, a JavaScript client. To host your own track data, note that the hosting server must support CORS access and Range requests.  See the [igv.js documentation](https://igv.org/doc/igvjs/#Data-Server-Requirements) for more details.  
