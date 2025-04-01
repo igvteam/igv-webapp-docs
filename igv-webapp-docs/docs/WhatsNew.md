@@ -8,6 +8,15 @@ The page title should not go in the menu
 
 <br>
 
+**March 2025. IGV-Web 2.2.6 based in igv.js 3.2.5**
+
+* The IGV-Web app hosted at https://igv.org/app can no longer support loading files from Google Drive. Files can still be loaded from Google Cloud Storage via gcs:// URLs. 
+
+* If you host your own instance of IGV-Web, you can configure the app with your own Google client id, including Google Drive support. [Details...](../Hosting/#configuration) 
+
+* If you host your own instance of IGV-Web, you can now also configure the app to include a listing of pre-defined sessions in the *Session* menu. [Details...](../Hosting/#configuration)
+
+
 **August 2024. IGV-Web 2.0.0 based in igv.js 3.0.1**
 
 This is a major release with many new features, described below:
@@ -72,7 +81,7 @@ This is a major release with many new features, described below:
     
     * Support for *bedMethyl* files (format described on the [ENCODE site](https://www.encodeproject.org/data-standards/wgbs); scroll down the page to see the description).
     
-    * New track type: *xQTL*. The [Example Sessions section](../ExampleSessions) has links a live IGV-Web app sessions that demonstrates xQTL tracks. 
+    * New track type: *xQTL*. The [Example Sessions section](../ExampleSessions) has a link to a live IGV-Web app session that demonstrates xQTL tracks. 
     
     * Images can be saved in PNG format, as well as the SVG format that was already supported.
     
