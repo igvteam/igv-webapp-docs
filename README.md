@@ -1,6 +1,6 @@
 # Documentation website: IGV-Web app
 
-This repo contains the source for the documentation for the IGV desktop application. The documentation is Markdown based and the website is generated using the [MkDocs](https://www.mkdocs.org/) static site generator. 
+This repo contains the source for the documentation for the IGV-Web app. The documentation is Markdown based and the website is generated using the [MkDocs](https://www.mkdocs.org/) static site generator. 
 
 To get started, pull this repo and then:
 - `conda env create -f igv-webapp-docs-env.yml` to install the Conda environment with necessary dependencies.
