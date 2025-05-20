@@ -382,5 +382,3 @@ The `Help` dropdown menu provides links to:
 # Supported browsers
 
 IGV-Web requires a modern web browser with support for JavaScript ECMAScript 2015. We try to test on the latest versions of Chrome, Safari, Firefox, and Edge. The Internet Explorer (IE) browser is not supported.
-
-http://127.0.0.1:8000/images/RegionsOfInterest.png

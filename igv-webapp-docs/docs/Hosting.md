@@ -19,25 +19,29 @@ Zip files of the current and previous versions of the IGV-Web app are available 
 
 ### Option 2: Build from source code
 
-* Pre-requisites
+Get the IGV-Web source code from our GitHub repository at [https://github.com/igvteam/igv-webapp](https://github.com/igvteam/igv-webapp).
+
+!!! Danger " "
+    Note that the master branch in the GitHub repository contains the current development snapshot, which may not be fully tested yet and may not correspond to the current documentation. For most users we recommend downloading the latest pre-built package in Option 1, which will correspond to the latest released version of the app.
+
+Pre-requisites
+
   * Node >= v8.11.4
   * NPM >= v5.6.0
+  
+To build the app:
 
-* Get the source code either (a) by downloading a zip file via the green `Code` button at https://github.com/igvteam/igv-webapp, or (b) by cloning the repository: 
+1. Change directories to project
 ````
-git clone https://github.com/igvteam/igv-webapp.git
+	cd ./igv-webapp
 ````
-* Change directories to project
+2. Install
 ````
-cd ./igv-webapp
+	npm install
 ````
-* Install
+3. Build. This step creates a `dist` directory with the same contents as the pre-built package.
 ````
-npm install
-````
-* Build. This step creates a `dist` directory with the same contents as the pre-built package.
-````
-npm run build
+	npm run build
 ````
 
 ## Serving and running the app
@@ -49,25 +53,17 @@ instructions for use with the NPM package http-server and Amazon S3 follow.
 
 For more information about http-server, including installing it locally, see the [http-server documentation](https://www.npmjs.com/package/http-server).
 
-* Start http-server and pass it the path to the built IGV-Web folder as a parameter. The folder is either the folder created when you downloaded the pre-packaged distribution described above, or it is the `dist` folder you built from the source code.
+1. Start http-server and pass it the path to the built IGV-Web folder as a parameter. The folder is either the folder created when you downloaded the pre-packaged distribution described above, or it is the `dist` folder you built from the source code.
 ````
-npx http-server -a localhost <IGV-Web folder>
+	npx http-server -a localhost <IGV-Web folder>
 ````
 
-* Open a browser and enter the following
-````
-localhost:8080
-````
-or
-````
-localhost:8080/index.html
-````
+2. Open a browser and enter `localhost:8080` or `localhost:8080/index.html`
 
 ### Example 2: Amazon S3
 
 To serve the app from Amazon S3, simply upload the contents from the IGV-Web content folder (i.e., the pre-packaged distribution described above, or the `dist` folder if building from source) to an Amazon S3 bucket.  Keep the 
-directory structure intact, and make all files public. An example of an S3 hosted app can be found at  
-[https://s3.amazonaws.com/igv.org.app/app/index.html](https://s3.amazonaws.com/igv.org.app/app/index.html).   
+directory structure intact, and make all files public. An example of an S3 hosted app can be found at [https://s3.amazonaws.com/igv.org.app/app/index.html](https://s3.amazonaws.com/igv.org.app/app/index.html).   
 
 Note this is an example only; it is an older version of the app that is that is not kept up to date.
 
