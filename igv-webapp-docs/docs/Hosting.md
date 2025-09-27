@@ -111,47 +111,46 @@ file picker.
 ```javascript
 var igvwebConfig = {
 
-    genomes: "resources/genomes.json",
+    // URL to genomes json file
+    genomes: "https://igv.org/genomes/genomes3.json",
+
+    // URL to a track registry file
     trackRegistryFile: "resources/tracks/trackRegistry.json",
 
     // Supply a drobpox api key to enable the Dropbox file picker in the load menus.  This is optional
-    //dropboxAPIKey: "...",
+    // dropboxAPIKey: 'your dropbox API key',
 
-    // Supply a Google client id to enable Google file access.  This is optional
-    // clientId: "...",
-    
-    googleDriveEnabled: false,
+    // Supply a Google client id to support Google Cloud Storage, and optionally Google Drive.  This is optional
+    // clientId: "your Google client id",
 
-    // Provide a URL shorterner function or object.   This is optional.  
-    // If not supplied sharable URLs will not be shortened.  
-    // If using tinyURL supply an api token.
+    // Enable Google Drive support.  Default is false, if enabled you must supply a clientId and apiKey
+    // googleDriveEnabled: true,
+    //  apiKey: "your Google api key",
+
+    // Provide a URL shorterner function or object.   This is optional.  If not supplied
+    // sharable URLs will not be shortened.  If using tinyURL supply an api token
     // urlShortener: {
     //     provider: "tinyURL",
-    //     api_token: "<your tinyurl token>"
-    // },
-    // urlShortener: function(longURL) {...   return shortendURL}
+    //    api_token: "your tinyURL api token"
+    //},
+
+    enableCircularView: true,
+
+    restoreLastGenome: true,
 
     igvConfig:
         {
-            genome: "hg19",
+            genome: "hg38",
             locus: "all",
-            genomeList: "resources/genomes.json",
+            loadDefaultGenomes: false,
             queryParametersSupported: true,
             showChromosomeWidget: true,
             showSVGButton: false,
-            tracks: [
-	    // TODO -- add default tracks here.  
-	    	// For example:
-                // {
-                //     name: "CTCF - string url",
-                //     type: "wig",
-                //     format: "bigwig",
-                //     url: "https://www.encodeproject.org/files/ENCFF563PAW/@@download/ENCFF563PAW.bigWig"
-                // }
-	    ]
+            tracks: []
         }
 
 }
+
 ```
 
 ### Track registry
@@ -323,10 +322,16 @@ The **example session registry file** below will add two pre-defined sessions to
 
 ### Google Drive
 
-The site hosted IGV-Web app at https://igv.org/app does not support authorized access to Googe Drive. If you are hosting 
-your own copy of the app and want to enable access to protected files stored on Google Drive, you must create your own 
-Google client ID and add it to the `clientId` property in `igvwebConfig.js`.  The steps are outlined below.
-Note that Google changes instructions from time to time but the steps below outline the general process.
+Access to Google Drive files requires a user action, specifically selecting files from the "Picker" dialog.  This is a 
+security requirement from Google.  Sessions and shared URLs with references to Google Drive will only work for the 
+user who created or picked them, these references cannot be shared with other users.  These are Google security policies
+and not specific to IGV-Web.
+
+The Google project identifiers are specific to https://igv.org/app and cannot be shared with other installations of 
+IGV-Web.  If you are hosting your own instance of IGV-Web, you must create your own
+Google clientID and API key and add them to the appropriate properties in `igvwebConfig.js`.  The steps are outlined below.
+Note that Google changes instructions and web pages from time to time, so the links below may become out of date.  Check
+the Google documentation if you have trouble.
 
 * Create a project [https://cloud.google.com/resource-manager/docs/creating-managing-projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 * Select you project from the Google Cloud Console: [https://console.cloud.google.com/](https://console.cloud.google.com/)
@@ -336,6 +341,7 @@ Note that Google changes instructions from time to time but the steps below outl
     * Authorized JavaScript origins: URL of your IGV-Web app
     * Authorized redirect URIs: URL of your IGV-Web app
 * Copy the client ID to the `clientId` property in igvwebConfig.js
+* Copy the API key to the `apiKey` property in igvwebConfig.js
 * Enable Google Drive in the app by setting the `googleDriveEnabled` property to `true`.
 
 ## Data servers
