@@ -321,6 +321,23 @@ The **example session registry file** below will add two pre-defined sessions to
 }
 ```
 
+### Google Drive
+
+The site hosted IGV-Web app at https://igv.org/app does not support authorized access to Googe Drive. If you are hosting 
+your own copy of the app and want to enable access to protected files stored on Google Drive, you must create your own 
+Google client ID and add it to the `clientId` property in `igvwebConfig.js`.  The steps are outlined below.
+Note that Google changes instructions from time to time but the steps below outline the general process.
+
+* Create a project [https://cloud.google.com/resource-manager/docs/creating-managing-projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
+* Select you project from the Google Cloud Console: [https://console.cloud.google.com/](https://console.cloud.google.com/)
+* Enable the Google Drive API: [https://console.developers.google.com/apis/library/drive](https://console.developers.google.com/apis/library/drive)
+* Create OAuth credentials: [https://console.developers.google.com/apis/credentials](https://console.developers.google.com/apis/credentials)
+    * Application type: Web application
+    * Authorized JavaScript origins: URL of your IGV-Web app
+    * Authorized redirect URIs: URL of your IGV-Web app
+* Copy the client ID to the `clientId` property in igvwebConfig.js
+* Enable Google Drive in the app by setting the `googleDriveEnabled` property to `true`.
+
 ## Data servers
 
 IGV-Web uses igv.js, a JavaScript client. To host your own track data, note that the hosting server must support CORS access and Range requests.  See the [igv.js documentation](https://igv.org/doc/igvjs/#Data-Server-Requirements) for more details.  
